@@ -1,5 +1,3 @@
-# react-redux-spotify-browser-example
-
 ![promo](https://raw.githubusercontent.com/penny-five/react-redux-spotify-browser-example/master/gh-assets/screenshot.png)
 
 
