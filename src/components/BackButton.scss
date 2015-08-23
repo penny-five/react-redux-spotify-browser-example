@@ -1,0 +1,16 @@
+@import "bourbon";
+@import "../colors";
+
+.back-button {
+    margin-bottom: 15px;
+    padding: 10px;
+
+    color: $color-brand;
+    font-size: 25px;
+
+    &:hover {
+        color: $color-brand-dark;
+    }
+
+    @include transition(color .2s ease-out);
+}
