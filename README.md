@@ -21,3 +21,7 @@ Launch on webpack dev server with `npm start`
 **or**
 
 Build in production mode with `npm run build`.
+
+## TODO
+
+Bug fixing, UI improvements and better documentation.
