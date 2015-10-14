@@ -5,14 +5,14 @@ import ShowMoreButton from '../ShowMoreButton';
 
 export default class Albumlist extends Component {
 
-	render() {
+    render() {
         const { artistId, albums, canShowMore, onShowMore } = this.props;
         return (
-			<ol>
+            <ol>
                 { albums.map(album => <AlbumListItem key={album.id} artistId={artistId} album={album} />) }
                 { albums.length > 0 && canShowMore? <ShowMoreButton onClick={onShowMore} /> : null }
             </ol>
-		);
+        );
     }
 
 }
