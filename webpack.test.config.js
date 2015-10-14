@@ -10,7 +10,7 @@ module.exports = (function() {
             return 'babel!' + file;
         }),
         output: {
-            path: __dirname,
+            path: path.join(__dirname, '.test'),
             filename: 'test.bundle.js'
         },
         module: {

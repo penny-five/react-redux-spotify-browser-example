@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "test:build": "node node_modules/webpack/bin/webpack.js -p --config webpack.test.config.js",
-    "test:run": "mocha --compilers js:babel/register test.bundle.js --require ./test/init.js",
+    "test:run": "mocha --compilers js:babel/register .test/test.bundle.js --require ./test/init.js",
     "test": "npm run test:build && npm run test:run",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js -p --config webpack.production.config.js"
   },
