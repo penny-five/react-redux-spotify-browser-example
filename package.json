@@ -9,6 +9,7 @@
     "test:build": "node node_modules/webpack/bin/webpack.js -p --config webpack.test.config.js",
     "test:run": "mocha --compilers js:babel/register .test/test.bundle.js --require ./test/init.js",
     "test": "npm run test:build && npm run test:run",
+    "test-debug": "npm run test:build && npm run test:run -- --debug-brk",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js -p --config webpack.production.config.js"
   },
   "author": "Joonas Lehtonen",
