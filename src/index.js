@@ -1,6 +1,7 @@
 /* global __DEVTOOLS__ */
 
 import 'babel-core/polyfill';
+import 'whatwg-fetch';
 
 import React from 'react';
 import { render } from 'react-dom';

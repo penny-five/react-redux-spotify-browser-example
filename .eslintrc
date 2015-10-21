@@ -20,10 +20,17 @@
         ],
         "no-var": 2
     },
+    "globals": {
+        "expect": true,
+        "mock": true,
+        "spy": true,
+        "stub": true
+    },
     "env": {
         "es6": true,
         "node": true,
-        "browser": true
+        "browser": true,
+        "mocha": true
     },
     "extends": "eslint:recommended",
     "ecmaFeatures": {

@@ -2,14 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
-var sassDependencies = [
-    require('node-bourbon').includePaths,
-    require('node-neat').includePaths
-].reduce(function(prev, cur) {
-    return prev.concat(cur);
-}).map(function(path) {
-    return 'includePaths[]=' + path;
-}).join('&');
+var loaders = require('./make-webpack-loaders')({ hot: true });
 
 module.exports = function(opts) {
 
@@ -46,35 +39,7 @@ module.exports = function(opts) {
             filename: '[hash].bundle.js'
         },
         module: {
-            loaders: [
-                {
-                    test: /\.png$/,
-                    include: path.join(__dirname, 'assets'),
-                    loader: 'file'
-                },
-                {
-                    test: /\.js$/,
-                    include: path.join(__dirname, 'src'),
-                    loaders: ['react-hot', 'babel']
-                },
-                {
-                    test: /\.css$/,
-                    loader: 'style!css'
-                },
-                {
-                    test: /\.scss$/,
-                    include: path.join(__dirname, 'src'),
-                    loader: 'style!raw!sass?' + sassDependencies
-                },
-                {
-                    test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                    loader: 'url?limit=10000&minetype=application/font-woff'
-                },
-                {
-                    test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                    loader: 'file'
-                }
-            ]
+            loaders: loaders
         },
         plugins: plugins,
         resolve: {
