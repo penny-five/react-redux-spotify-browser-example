@@ -9,6 +9,7 @@
     "test:build": "node node_modules/webpack/bin/webpack.js -p --config webpack.test.config.js",
     "test:run": "mocha --compilers js:babel/register .test/test.bundle.js --require ./test/init.js",
     "test": "npm run test:build && npm run test:run",
+    "test-bamboo": "npm run test:build && npm run test:run -- -R mocha-bamboo-reporter",
     "test-debug": "npm run test:build && npm run test:run -- --debug-brk",
     "build": "NODE_ENV=production node node_modules/webpack/bin/webpack.js -p --config webpack.production.config.js"
   },
@@ -29,6 +30,7 @@
     "html-webpack-plugin": "^1.6.1",
     "imports-loader": "^0.6.4",
     "jsdom": "^6.5.1",
+    "mocha-bamboo-reporter": "^1.1.0",
     "node-sass": "^3.2.0",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^0.14.0",
